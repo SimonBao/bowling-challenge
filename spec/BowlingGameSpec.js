@@ -29,6 +29,12 @@ describe('BowlingGame', function () {
             expect(bowlingGame.score()).toBe(300)
         });
 
+        it('Strike ends frame', function () {
+            expect(bowlingGame.frames.length).toBe(0);
+            bowlingGame.roll(10);
+            expect(bowlingGame.frames.length).toBe(1);
+        });
+
         it('Each frame contains 2 rolls', function () {
             bowlingGame.roll(5);
             bowlingGame.roll(3);
