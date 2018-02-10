@@ -6,7 +6,7 @@ function BowlingGame() {
 
 BowlingGame.prototype.score = function () {
     this._calculateScore();
-    return this.gameScore
+    return this.gameScore;
 };
 
 BowlingGame.prototype.roll = function (pins) {

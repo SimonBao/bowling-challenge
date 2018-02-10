@@ -23,7 +23,7 @@ describe('Frame', function () {
         it('Frame score is tracked', function () {
             frame.addRolls(5);
             frame.addRolls(3);
-            expect(frame.score).toBe(8)
+            expect(frame.score()).toBe(8)
         });
     })
 
