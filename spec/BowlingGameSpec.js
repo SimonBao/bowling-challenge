@@ -11,6 +11,10 @@ describe('BowlingGame', function () {
             expect(bowlingGame.score()).toBe(0)
         });
 
+        it('frames empty', function () {
+            expect(bowlingGame.frames).toEqual([])
+        })
+
     })
 
 
