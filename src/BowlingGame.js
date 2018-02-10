@@ -18,7 +18,7 @@ BowlingGame.prototype.roll = function (pins) {
         }
     } else {
         this._nextFrame();
-        this.frame.push(pins)
+        frame.push(pins)
     }
 };
 
