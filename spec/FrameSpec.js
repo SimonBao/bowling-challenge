@@ -18,7 +18,13 @@ describe('Frame', function () {
             frame.addRolls(5);
             frame.addRolls(2);
             expect(frame.rolls).toEqual([5,2])
-        })
+        });
+
+        it('Frame score is tracked', function () {
+            frame.addRolls(5);
+            frame.addRolls(3);
+            expect(frame.score).toBe(8)
+        });
     })
 
 
