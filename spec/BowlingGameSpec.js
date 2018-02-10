@@ -21,6 +21,14 @@ describe('BowlingGame', function () {
             bowlingGame.roll(5);
             bowlingGame.roll(5);
             expect(bowlingGame.score()).toBe(10)
+        });
+
+        it('Each frame contains 2 rolls', function () {
+            bowlingGame.roll(5);
+            bowlingGame.roll(3);
+            expect(bowlingGame.score()).toBe(8);
+            expect(bowlingGame.currentFrame.rolls).toEqual([]);
+            expect(bowlingGame.frames.length).toBe(1);
         })
     })
 
