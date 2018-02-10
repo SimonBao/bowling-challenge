@@ -8,13 +8,8 @@ BowlingGame.prototype.score = function () {
     return this.gameScore
 };
 
-
-
-
-
 BowlingGame.prototype.roll = function (pins) {
     this.frames.push(pins);
-
 };
 
 BowlingGame.prototype._calculateScore = function () {
