@@ -11,6 +11,14 @@ describe('Frame', function () {
         it('Frame starts with empty array', function () {
             expect(frame.rolls).toEqual([])
         })
+    });
+
+    describe('Frame Features', function () {
+        it('Rolls stored in rolls array', function () {
+            frame.addRolls(5);
+            frame.addRolls(2);
+            expect(frame.rolls).toEqual([5,2])
+        })
     })
 
 
