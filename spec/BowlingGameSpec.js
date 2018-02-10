@@ -7,14 +7,21 @@ describe('BowlingGame', function () {
     });
 
     describe('Game Initialization Values', function () {
-        it('score starts at 0', function () {
+        it('Score starts at 0', function () {
             expect(bowlingGame.score()).toBe(0)
         });
 
-        it('frames empty', function () {
+        it('Frames empty', function () {
             expect(bowlingGame.frames).toEqual([])
         })
+    });
 
+    describe('Game Features', function () {
+        it('Player can input rolls', function () {
+            bowlingGame.roll(5);
+            bowlingGame.roll(5);
+            expect(bowlingGame.score()).toBe(10)
+        })
     })
 
 
