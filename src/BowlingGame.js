@@ -9,10 +9,18 @@ BowlingGame.prototype.score = function () {
     return this.gameScore;
 };
 
-// BowlingGame.prototype.roll = function (pins) {
-//     this.currentFrame.rolls.push(pins);
-//
-// };
+BowlingGame.prototype.roll = function (pins) {
+    var frame = this.currentFrame.rolls;
+    if(frame.length < 2){
+        frame.push(pins);
+        if(frame.length === 2){
+            this._nextFrame();
+        }
+    } else {
+        this._nextFrame();
+        this.frame.push(pins)
+    }
+};
 
 BowlingGame.prototype._calculateScore = function () {
     for(var i = 0; i < this.frames.length; i++){
@@ -20,19 +28,15 @@ BowlingGame.prototype._calculateScore = function () {
     }
 };
 
-
-
-BowlingGame.prototype.roll = function (pins) {
-    if(this.currentFrame.rolls.length < 2){
-        this.currentFrame.rolls.push(pins);
-        if(this.currentFrame.rolls.length === 2){
-            this.frames.push(this.currentFrame);
-            this.currentFrame = new Frame();
-        }
-    } else {
-        this.frames.push(this.currentFrame);
-        this.currentFrame = new Frame();
-        this.currentFrame.rolls.push(pins)
-    }
+BowlingGame.prototype._nextFrame = function () {
+    this._storeFrame();
+    this._createFrame();
 };
 
+BowlingGame.prototype._storeFrame = function () {
+    this.frames.push(this.currentFrame);
+};
+
+BowlingGame.prototype._createFrame = function () {
+    this.currentFrame = new Frame();
+};
