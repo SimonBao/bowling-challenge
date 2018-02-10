@@ -18,9 +18,15 @@ describe('BowlingGame', function () {
 
     describe('Game Features', function () {
         it('Player can track score', function () {
-            bowlingGame.roll(5);
-            bowlingGame.roll(5);
+            multipleRolls(5,2);
+            console.log(bowlingGame);
             expect(bowlingGame.score()).toBe(10)
+        });
+
+        it('Perfect game 300 score', function () {
+            multipleRolls(10,12);
+            console.log(bowlingGame);
+            expect(bowlingGame.score()).toBe(300)
         });
 
         it('Each frame contains 2 rolls', function () {
@@ -30,7 +36,11 @@ describe('BowlingGame', function () {
             expect(bowlingGame.currentFrame.rolls).toEqual([]);
             expect(bowlingGame.frames.length).toBe(1);
         })
-    })
+    });
 
-
+    var multipleRolls = function (pins, rolls) {
+        for(var i = 0; i < rolls; i++){
+            bowlingGame.roll(pins);
+        }
+    }
 });
