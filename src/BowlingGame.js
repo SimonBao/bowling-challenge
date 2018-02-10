@@ -4,9 +4,7 @@ function BowlingGame() {
 }
 
 BowlingGame.prototype.score = function () {
-    for(var i = 0; i < this.frames.length; i++){
-        this.gameScore += this.frames[i];
-    }
+    this._calculateScore();
     return this.gameScore
 };
 
@@ -17,6 +15,14 @@ BowlingGame.prototype.score = function () {
 BowlingGame.prototype.roll = function (pins) {
     this.frames.push(pins);
 
-}
+};
+
+BowlingGame.prototype._calculateScore = function () {
+    for(var i = 0; i < this.frames.length; i++){
+        this.gameScore += this.frames[i];
+    }
+};
+
+
 
 
