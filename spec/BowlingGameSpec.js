@@ -19,7 +19,6 @@ describe('BowlingGame', function () {
     describe('Game Features', function () {
         it('Player can track score', function () {
             multipleRolls(5,2);
-            console.log(bowlingGame);
             expect(bowlingGame.score()).toBe(10)
         });
 
