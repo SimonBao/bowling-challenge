@@ -12,4 +12,6 @@ describe('Frame', function () {
             expect(frame.rolls).toEqual([])
         })
     })
+
+
 });

@@ -1,6 +1,7 @@
 function BowlingGame() {
     this.frames = [];
     this.gameScore = 0;
+    this.currentFrame = new Frame();
 }
 
 BowlingGame.prototype.score = function () {
@@ -9,7 +10,8 @@ BowlingGame.prototype.score = function () {
 };
 
 BowlingGame.prototype.roll = function (pins) {
-    this.frames.push(pins);
+    this.currentFrame.rolls.push(pins);
+
 };
 
 BowlingGame.prototype._calculateScore = function () {
