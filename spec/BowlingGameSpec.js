@@ -24,8 +24,15 @@ describe('BowlingGame', function () {
 
         it('Perfect game 300 score', function () {
             multipleRolls(10,12);
-            console.log(bowlingGame);
             expect(bowlingGame.score()).toBe(300)
+
+        });
+
+        it('All 5s game equals 150', function () {
+            multipleRolls(5,22);
+            console.log(bowlingGame);
+            expect(bowlingGame.score()).toBe(150)
+
         });
 
         it('Strike ends frame', function () {
